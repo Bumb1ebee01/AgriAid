@@ -1,0 +1,31 @@
+idf_component_register(
+    SRCS
+        "firmware.c"
+        "led_status/led_status.c"
+        "sensors/sensor_manager.c"
+        "control/irrigation_controller.c"
+        "web/web_server.c"
+        "ml/ml_inference.cpp"
+        "storage/data_logger.c"
+
+    INCLUDE_DIRS
+        "."
+        "led_status"
+        "sensors"
+        "control"
+        "ml"
+        "web"
+        "storage"
+
+    REQUIRES
+        esp-tflite-micro
+        esp_timer
+        esp_wifi
+        esp_event
+        esp_netif
+        esp_http_server
+        nvs_flash
+        driver
+        led_strip
+        littlefs
+)
